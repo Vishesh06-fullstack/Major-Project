@@ -1,0 +1,155 @@
+<% layout("/layout/boilerPlate.ejs") %>
+
+<style>
+  #filters{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* gap: 1rem; */
+  }
+  
+.filter {
+  flex: 0 0 25%; 
+  max-width: 25%;
+  text-align: center;
+  font-family: sans-serif;
+  margin-top: 2rem;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.tax-info{
+  display: inline;
+  font-weight: 600;
+}
+
+@media (min-width: 992px) {
+  .filter {
+    flex: 0 0 10%; 
+    max-width: 10%;
+  }
+}
+  .filter:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
+  .filter p{
+    font-size: 0.8rem;
+  }
+
+  .tax-info{
+    display: none;
+  }
+  .info-show{
+    display: inline;
+  }
+  .tax-toggle{
+    border-radius: 1rem;
+    border: 2px solid #ccc;
+    height: 3.5rem;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    /* margin-left: 20px; */
+  }
+
+</style>
+  <div id="filters">
+    <div class="filter">
+      <div class=" ">
+        <i class="fa-solid fa-fire"></i>
+      </div>
+      <p>Trending</p>
+    </div>
+    <div class="filter">
+      <div class=" ">
+        <i class="fa-solid fa-bed"></i>
+      </div>
+      <p>Rooms</p>
+    </div>
+     <div class="filter">
+      <div class="">
+       <i class="fa-solid fa-mountain-city"></i>
+      </div>
+      <p>Iconic Cities</p>
+    </div> 
+    <div class="filter">
+      <div class="">
+       <i class="fa-solid fa-mountain"></i>
+      </div>
+      <p>Mountain</p>
+    </div>
+     <div class="filter">
+      <div class="">
+        <i class="fa-solid fa-umbrella-beach"></i>
+      </div>
+      <p>Beach</p>
+    </div>
+    <div class="filter">
+      <div class="">
+        <i class="fa-solid fa-water-ladder"></i>
+      </div>
+      <p>Pool</p>
+    </div>
+    <div class="filter">
+      <div class="">
+      <i class="fa-solid fa-campground"></i>
+      </div>
+      <p>Camping</p>
+    </div>
+     <div class="filter">
+      <div class="">
+       <i class="fa-solid fa-wheat-awn"></i>
+      </div>
+      <p>Farms</p>
+    </div>
+   
+   
+    <div class="tax-toggle">
+      <div class="form-check-reverse form-switch">
+     <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+      <label class="form-check-label" for="switchCheckDefault">Price After Tax</label>
+</div>
+    </div>
+  </div>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3  ">
+      <% for (let listing of alllistings) { %>
+          <div class="card listing-card" style="height: auto; width: 20rem; padding: 20px;">
+            <a class="listing-link" href="/listings/<%= listing._id %>">
+              <img
+                class="card-img-top img-fluid w-100"
+                src="<%= listing.image.url %>"
+                alt="listing_img"
+              />
+            </a>
+            <div class="card-body">
+              <h5 class="card-title"><%= listing.title %></h5>
+              <p class="card-text">&#8377; <%= listing.price.toLocaleString("en-IN")%>/night
+                <% 
+                  let gst_price = listing.price * 0.18;
+                  let final_price = listing.price + gst_price;
+                  %>
+              <i class="tax-info"> &nbsp; &nbsp;  &#8377;<%= final_price.toLocaleString("en-IN")%>/night
+              </i>
+              </p>
+            </div>
+          </div>
+      <% } %>
+    </div>
+  
+
+<script>
+  let taxSwitch = document.getElementById("switchCheckDefault");
+  let original_price = document.getElementsByClassName("card-text");
+  console.log(original_price);
+  taxSwitch.addEventListener('click' , () => {
+      let TaxInfor = document.getElementsByClassName("tax-info");
+      console.log(TaxInfor);
+      for(info of TaxInfor){
+     console.log(info.textContent);
+      info.classList.toggle('info-show');
+    }
+   
+  })
+</script>

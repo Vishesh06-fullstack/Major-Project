@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sedan:ital@0;1&display=swap');
+
+* {
+  box-sizing: border-box !important;
+}
+body{
+    font-family: "Plus Jakarta Sans" , sans-serif !important;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+    flex: 1 !important;
+}
+.navbar{
+    height: 5rem;
+    background-color: #fff;
+}
+.listing-link{
+    text-decoration: none !important;
+}
+.fa-compass{
+    color: #fe424d;
+    font-size: 2rem;
+}
+.nav-link{
+    color: #222222 !important;
+}
+/* footer */
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+.f-info-links , .f-info-socials , .f-info-brand{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.f-info-socials i{
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.f-info{
+    text-align: center;
+    display: flex;
+    height: 8rem;
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+
+}
+
+/* cards */
+.row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 1rem ;
+    object-fit: cover !important;
+}
+.text-list{
+    text-align: center ;
+}
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+    width: 100%;
+    transition: transform all ease-in-out 1.5s ;
+}
+.listing-card:hover{
+    transform: scale(1.1);
+}
+.anchor-ref{
+    width: 100%;
+}
+.card-img-top{
+    border-radius: 1rem ;
+    object-fit: cover !important;
+    height: 20rem;
+    box-shadow: 2px 2px 2px #ccc;
+}
+.card-body{
+    padding: 0 !important;
+
+}
+.card-text p{
+    font-weight: 400 !important;
+}
+.listing-link{
+    text-decoration: none;
+    color: black;
+    transition: all 1s ease-in-out;
+}
+.listing-link:hover{
+    color: black;
+    /* transform: scale(1.1); */
+}
+
+.card-img-top{
+    /* width: 100% !important; */
+    height: 30vh !important;
+}
+
+.card-img-overlay{
+    opacity: 0;
+    transition: 1s all ease-in;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* new page ejs styling */
+.btn-add{
+    border: none !important;
+}
+.btn-add:hover{
+    background-color: #fe424d !important;
+}
+/* edit page */
+
+.btns{
+    margin-top: 15px;
+    padding: 10px;
+    
+}
+.edit-btn{
+    border: none !important;
+    margin: 7px;
+    
+}
+.delete-btn{ 
+
+    padding: 7px;
+    border-radius: 15px;
+} 
+.delete-btn:hover{
+    background-color: red;
+    color: #fff;
+    
+}
+
+.edit-btn:hover{
+     background-color: #fe424d !important;
+}
+/* show img */
+.show-img{
+    height: 30vh !important;
+}
+.btns{
+    display: flex !important;
+   align-items: center;
+
+
+
+}
+.show-card{
+    padding-left: 0 ;
+    padding-right: 0;
+}
+.GoSomewhere{
+    text-decoration: none;
+    padding: 9px;
+    background-color: rgb(73, 73, 201);
+    color: white;
+    border-radius: 16px;
+}
+
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+[data-theme='dark'] {
+  --bg-color: #121212;
+  --text-color: #f1f1f1;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
