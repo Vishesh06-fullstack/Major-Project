@@ -22,6 +22,29 @@
   display: inline;
   font-weight: 600;
 }
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 30px;
+    z-index: 100;
+  }
+    .call-float {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 25px;
+    z-index: 100;
+    margin-bottom: 50px;
+  }
 
 @media (min-width: 992px) {
   .filter {
@@ -113,6 +136,16 @@
 </div>
     </div>
   </div>
+  <!-- whatsapp functionality -->
+
+  <a href="https://wa.me/919911708137?text=%20Your%20Project%20is%20amazing!" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<!-- phone functionality -->
+<a href="tel:+919911708137" class="call-float">
+  <i class="fas fa-phone-alt"></i>
+</a>
+
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3  ">
       <% for (let listing of alllistings) { %>
           <div class="card listing-card" style="height: auto; width: 20rem; padding: 20px;">

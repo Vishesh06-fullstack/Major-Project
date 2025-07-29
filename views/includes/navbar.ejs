@@ -3,6 +3,7 @@
  nav{
   padding: 20px !important;
  }
+ 
   .btn-search {
     background-color: #fe424d;
     color: #fff;
@@ -40,29 +41,52 @@
     border-radius: 25px;
     padding: 0.5rem 3rem 0.5rem 3rem ;
     font-size: 0.8rem;
-    width: 100% !important;
-    
+    /* width: 100% !important; */
   }
   .Wander-Text{
     font-size: 1.5rem;
     color: red !important;
     font-weight: 600;
     margin-left: 0px;
-    
   }
-  .Your-home{
+
+  .Your-home:hover{
     background-color: bisque;
     border-radius: 30px;
   }
- 
-
   
+   #navbarNavAltMarkup{
+    margin-top: 18px;
+   }
+  @media (max-width : 768px) {
+     .search-inp{
+      padding: 3px;
+     }
+     .btn-search{
+      padding: 0.3rem 1.5rem 0.3rem 1.5rem ;
+     }
+    .Wander-Text{
+      display: none;
+    }
+    .Your-home:hover{
+      text-align: center;
+    }
+    #navbarNavAltMarkup{
+    background-color: #f0f0f0;
+    padding: 10px;
+    
+  }
+  .nav-flexing{
+    display: flex;
+    flex-direction: column;
+  }
+  }
 </style>
 
 <nav
   class="navbar navbar-expand-md navbar-light bg-body-light border-bottom sticky-top"
 >
-  <a class="navbar-brand" href="/listings"
+  <a class="compass navbar-brand" href="/listings"
     ><i class="fa-regular fa-compass"></i
   ></a>
   <button
@@ -82,7 +106,7 @@
     </div>
 
   
-    <div class="navbar-nav ms-auto">
+    <div class="navbar-nav nav-flexing ms-auto">
       <form class="d-flex" role="search" action="/listings/search" method="GET">
         <input
           class="form-control search-input me-2 search-inp"
@@ -100,7 +124,7 @@
 
     <div class="navbar-nav ms-auto">
       <button
-        id="themeToggle"
+        id="themeToggle "
         class="btn btn-sm ms-2"
         onclick="toggleTheme()"
         style="font-size: 1.2rem"
@@ -108,7 +132,7 @@
         🌙
       </button>
 
-      <a class="nav-item nav-link Your-home" href="/listings/new">Add Your Home</a>
+      <a class="nav-item nav-link Your-home" href="/listings/new">Add Your's Home</a>
       <% if(!currUser){ %>
       <a class="nav-item nav-link" href="/signup"><b>Sign up</b></a>
       <a class="nav-item nav-link" href="/login"><b>Log in</b></a>
